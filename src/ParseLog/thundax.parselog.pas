@@ -46,11 +46,13 @@ type
     StringGrid1: TStringGrid;
     Button3: TButton;
     Button4: TButton;
+    Copy: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure CopyClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +65,7 @@ var
 implementation
 
 uses
-  System.StrUtils;
+  System.StrUtils, ClipBrd;
 
 {$R *.dfm}
 
@@ -182,6 +184,7 @@ end;
 procedure TForm1.Button4Click(Sender: TObject);
 var
   I: Integer;
+  j: Integer;
 begin
   for I := 1 to 12 do
   begin
@@ -192,6 +195,29 @@ begin
   begin
     StringGrid1.Cells[0, i] := i.ToString();
   end;
+
+  for i := 1 to 10 do
+  begin
+    for j := 1 to 12 do
+      StringGrid1.Cells[j, i] := '';
+  end;
+  memo1.Lines.Clear;
+end;
+
+procedure TForm1.CopyClick(Sender: TObject);
+var
+  S: string;
+  i, j: Integer;
+begin
+  S := '';
+  for j := StringGrid1.Selection.Top to StringGrid1.Selection.Bottom do
+  begin
+    for i := StringGrid1.Selection.Left to StringGrid1.Selection.Right - 1 do
+      S := S + StringGrid1.Cells[i, j] + #9;
+    S := S + StringGrid1.Cells[StringGrid1.Selection.Right, j] + sLineBreak;
+  end;
+  Delete(S, Length(S) - Length(sLineBreak) + 1, Length(sLineBreak));
+  Clipboard.AsText := S;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

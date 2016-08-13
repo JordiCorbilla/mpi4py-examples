@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -2105,6 +2106,15 @@ object Form1: TForm1
         Caption = 'Clear'
         TabOrder = 3
         OnClick = Button4Click
+      end
+      object Copy: TButton
+        Left = 162
+        Top = 12
+        Width = 119
+        Height = 25
+        Caption = 'Copy to Clipboard'
+        TabOrder = 4
+        OnClick = CopyClick
       end
     end
   end
