@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/08/12 21:45:44.000.679,=C:\Users\thund\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/08/12 21:50:12.000.442,C:\Users\thund\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\thund\Desktop\ParseLog\thundax.parselog.dfm</Transaction>
+    <Transaction>2016/08/12 21:50:12.000.442,C:\Users\thund\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\thund\Desktop\ParseLog\thundax.parselog.pas</Transaction>
+    <Transaction>2016/08/12 21:50:16.000.968,C:\Users\thund\OneDrive\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\thund\Desktop\ParseLog\parseLog.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -3,3 +3,8 @@
 ################################################################################
 
 *.dcu
+/src/ParseLog/__history
+*.exe
+*.pptx
+/src/ParseLog/Win64/Debug
+/src/documentation/~$Results.xlsx
