@@ -2,6 +2,8 @@
 
 This repository contains advanced parallel computing scripts to run against an MPI cluster.
 
+**License:** GNU General Public License.
+
 The creation and configuration of the cluster can be seen here:
 
 - [Creating a Raspberry Pi 3 cluster for parallel computing](http://thundaxsoftware.blogspot.co.uk/2016/07/creating-raspberry-pi-3-cluster.html)
@@ -33,3 +35,23 @@ Test | Sequential Time | CPU1 | CPU2 | CPU3 | CPU4 | CPU1 | CPU2 | CPU3 | CPU4 |
 ![](https://2.bp.blogspot.com/-wsD4xAfhIFk/V6-1lIva0wI/AAAAAAAAFp0/PnwvU9qbMJgGvmNXLseKwMYXRq-hl4CSwCLcB/s640/alltogether.png)
 ![](https://3.bp.blogspot.com/-PBgNpQZDm50/V6-0MGQiqDI/AAAAAAAAFpo/phdbxb8zlogdMtCJigMKANqYYnSxuko_gCLcB/s640/speedup.png)
 
+**Licence**
+-------
+
+    mpi4py-examples Copyright (C) 2016 Jordi Corbilla
+
+    This program is free software: you can redistribute it and/or modify it under the terms of the GNU 
+    General Public License as published by the Free Software Foundation, either version 3 of the License,
+    or (at your option) any later version.
+    
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even 
+    the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+    License for more details.
+    
+    You should have received a copy of the GNU General Public License along with this program. 
+    If not, see http://www.gnu.org/licenses/.
+
+## Sponsors
+No sponsors yet! Will you be the first?
+
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L5FCF6LX5C9AW "Donate once-off to this project using Paypal")
