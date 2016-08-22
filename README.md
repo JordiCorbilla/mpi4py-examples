@@ -35,6 +35,10 @@ Test | Sequential Time | CPU1 | CPU2 | CPU3 | CPU4 | CPU1 | CPU2 | CPU3 | CPU4 |
 ![](https://2.bp.blogspot.com/-wsD4xAfhIFk/V6-1lIva0wI/AAAAAAAAFp0/PnwvU9qbMJgGvmNXLseKwMYXRq-hl4CSwCLcB/s640/alltogether.png)
 ![](https://3.bp.blogspot.com/-PBgNpQZDm50/V6-0MGQiqDI/AAAAAAAAFpo/phdbxb8zlogdMtCJigMKANqYYnSxuko_gCLcB/s640/speedup.png)
 
+See the multiplication in action using 3 CPUs on each node:
+
+![](https://3.bp.blogspot.com/-fXcJLbqVU4U/V7IVlnNAWqI/AAAAAAAAFqU/Db6V5i1XuWYYiVNwJOiYTQZVFrRS-9PLgCLcB/s640/Animation.gif)
+
 **Licence**
 -------
 
