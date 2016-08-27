@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mpi4py-examples by JordiCorbilla</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mpi4py-examples</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/JordiCorbilla/mpi4py-examples">View the Project on GitHub <small>JordiCorbilla/mpi4py-examples</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JordiCorbilla/mpi4py-examples/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/mpi4py-examples/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JordiCorbilla/mpi4py-examples">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="mpi4py-examples" class="anchor" href="#mpi4py-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mpi4py-examples</h1>
+
+<p>This repository contains advanced parallel computing scripts to run against an MPI cluster.</p>
+
+<p><strong>License:</strong> GNU General Public License.</p>
+
+<p>The creation and configuration of the cluster can be seen here:</p>
+
+<ul>
+<li><a href="http://thundaxsoftware.blogspot.co.uk/2016/07/creating-raspberry-pi-3-cluster.html">Creating a Raspberry Pi 3 cluster for parallel computing</a></li>
+<li><a href="http://thundaxsoftware.blogspot.co.uk/2016/08/raspberry-pi-3-cluster-test.html">Raspberry Pi 3 Cluster test</a></li>
+</ul>
+
+<p>The example provided in this repository is about matrix multiplication via MPI. The approach used is by slicing the matrix and sending each chunk to a particular node of the cluster, perform the calculations and send the results back to the main node.</p>
+
+<p>The results of the execution can be seen below (time in seconds):</p>
+
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Sequential Time</th>
+<th>CPU1</th>
+<th>CPU2</th>
+<th>CPU3</th>
+<th>CPU4</th>
+<th>CPU1</th>
+<th>CPU2</th>
+<th>CPU3</th>
+<th>CPU4</th>
+<th>CPU1</th>
+<th>CPU2</th>
+<th>CPU3</th>
+<th>CPU4</th>
+<th>Max</th>
+<th>Speedup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12x12</td>
+<td>0.01111</td>
+<td>0.00525</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.0037</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.0037</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.00525</td>
+<td>2.116190476</td>
+</tr>
+<tr>
+<td>12x12</td>
+<td>0.01111</td>
+<td>0.00292</td>
+<td>0.00202</td>
+<td></td>
+<td></td>
+<td>0.00208</td>
+<td>0.00303</td>
+<td></td>
+<td></td>
+<td>0.00206</td>
+<td>0.00211</td>
+<td></td>
+<td></td>
+<td>0.00303</td>
+<td>3.666666667</td>
+</tr>
+<tr>
+<td>12x12</td>
+<td>0.01111</td>
+<td>0.00197</td>
+<td>0.00175</td>
+<td>0.00129</td>
+<td></td>
+<td>0.00205</td>
+<td>0.00182</td>
+<td>0.00122</td>
+<td></td>
+<td>0.00218</td>
+<td>0.00183</td>
+<td>0.00127</td>
+<td></td>
+<td>0.00218</td>
+<td>5.096330275</td>
+</tr>
+<tr>
+<td>12x12</td>
+<td>0.01111</td>
+<td>0.00214</td>
+<td>0.00233</td>
+<td>0.00212</td>
+<td>0.00194</td>
+<td>0.00202</td>
+<td>0.00234</td>
+<td>0.00267</td>
+<td>0.00185</td>
+<td>0.00201</td>
+<td>0.00222</td>
+<td>0.00209</td>
+<td>0.00241</td>
+<td>0.00267</td>
+<td>4.161048689</td>
+</tr>
+<tr>
+<td>60x60</td>
+<td>1.29955</td>
+<td>0.4778</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.36717</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.36728</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.4778</td>
+<td>2.719861867</td>
+</tr>
+<tr>
+<td>60x60</td>
+<td>1.29955</td>
+<td>0.35127</td>
+<td>0.27552</td>
+<td></td>
+<td></td>
+<td>0.20697</td>
+<td>0.34767</td>
+<td></td>
+<td></td>
+<td>0.27474</td>
+<td>0.207</td>
+<td></td>
+<td></td>
+<td>0.35127</td>
+<td>3.699575825</td>
+</tr>
+<tr>
+<td>60x60</td>
+<td>1.29955</td>
+<td>0.21966</td>
+<td>0.22068</td>
+<td>0.15385</td>
+<td></td>
+<td>0.22046</td>
+<td>0.22196</td>
+<td>0.15476</td>
+<td></td>
+<td>0.22054</td>
+<td>0.22058</td>
+<td>0.15436</td>
+<td></td>
+<td>0.22196</td>
+<td>5.854883763</td>
+</tr>
+<tr>
+<td>60x60</td>
+<td>1.29955</td>
+<td>0.18464</td>
+<td>0.18589</td>
+<td>0.18397</td>
+<td>0.18379</td>
+<td>0.18283</td>
+<td>0.1851</td>
+<td>0.18473</td>
+<td>0.18374</td>
+<td>0.18373</td>
+<td>0.18427</td>
+<td>0.18396</td>
+<td>0.18381</td>
+<td>0.18589</td>
+<td>6.990962397</td>
+</tr>
+<tr>
+<td>144x144</td>
+<td>15.02287</td>
+<td>5.08906</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4.99491</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4.93309</td>
+<td></td>
+<td></td>
+<td></td>
+<td>5.08906</td>
+<td>2.951993099</td>
+</tr>
+<tr>
+<td>144x144</td>
+<td>15.02287</td>
+<td>2.78648</td>
+<td>2.90336</td>
+<td></td>
+<td></td>
+<td>2.67886</td>
+<td>2.78634</td>
+<td></td>
+<td></td>
+<td>2.89459</td>
+<td>2.68409</td>
+<td></td>
+<td></td>
+<td>2.90336</td>
+<td>5.174304943</td>
+</tr>
+<tr>
+<td>144x144</td>
+<td>15.02287</td>
+<td>3.11941</td>
+<td>2.69587</td>
+<td>2.022</td>
+<td></td>
+<td>3.12694</td>
+<td>2.69165</td>
+<td>2.0254</td>
+<td></td>
+<td>3.12809</td>
+<td>2.68855</td>
+<td>2.01999</td>
+<td></td>
+<td>3.12809</td>
+<td>4.802569619</td>
+</tr>
+<tr>
+<td>144x144</td>
+<td>15.02287</td>
+<td>2.37735</td>
+<td>2.3879</td>
+<td>2.2758</td>
+<td>2.38267</td>
+<td>2.37713</td>
+<td>2.27037</td>
+<td>2.38764</td>
+<td>2.37814</td>
+<td>2.25782</td>
+<td>2.38018</td>
+<td>2.38604</td>
+<td>2.27187</td>
+<td>2.3879</td>
+<td>6.29124754</td>
+</tr>
+<tr>
+<td>216x216</td>
+<td>51.69995</td>
+<td>17.26683</td>
+<td></td>
+<td></td>
+<td></td>
+<td>17.08989</td>
+<td></td>
+<td></td>
+<td></td>
+<td>16.66551</td>
+<td></td>
+<td></td>
+<td></td>
+<td>17.26683</td>
+<td>2.994177275</td>
+</tr>
+<tr>
+<td>216x216</td>
+<td>51.69995</td>
+<td>9.67602</td>
+<td>8.63827</td>
+<td></td>
+<td></td>
+<td>8.60859</td>
+<td>9.65453</td>
+<td></td>
+<td></td>
+<td>8.62195</td>
+<td>8.62782</td>
+<td></td>
+<td></td>
+<td>9.67602</td>
+<td>5.343100779</td>
+</tr>
+<tr>
+<td>216x216</td>
+<td>51.69995</td>
+<td>10.52823</td>
+<td>9.46254</td>
+<td>7.30951</td>
+<td></td>
+<td>10.51718</td>
+<td>9.44692</td>
+<td>7.30529</td>
+<td></td>
+<td>10.54083</td>
+<td>9.48649</td>
+<td>7.28061</td>
+<td></td>
+<td>10.54083</td>
+<td>4.90473236</td>
+</tr>
+<tr>
+<td>216x216</td>
+<td>51.69995</td>
+<td>8.13615</td>
+<td>8.12379</td>
+<td>8.00465</td>
+<td>8.13003</td>
+<td>8.13992</td>
+<td>7.94381</td>
+<td>8.14352</td>
+<td>8.1071</td>
+<td>8.00023</td>
+<td>8.13681</td>
+<td>8.14298</td>
+<td>7.999</td>
+<td>8.14352</td>
+<td>6.348599868</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="https://2.bp.blogspot.com/-wsD4xAfhIFk/V6-1lIva0wI/AAAAAAAAFp0/PnwvU9qbMJgGvmNXLseKwMYXRq-hl4CSwCLcB/s640/alltogether.png" alt="">
+<img src="https://3.bp.blogspot.com/-PBgNpQZDm50/V6-0MGQiqDI/AAAAAAAAFpo/phdbxb8zlogdMtCJigMKANqYYnSxuko_gCLcB/s640/speedup.png" alt=""></p>
+
+<p>See the multiplication in action using 3 CPUs on each node:</p>
+
+<p><img src="https://3.bp.blogspot.com/-fXcJLbqVU4U/V7IVlnNAWqI/AAAAAAAAFqU/Db6V5i1XuWYYiVNwJOiYTQZVFrRS-9PLgCLcB/s640/Animation.gif" alt=""></p>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Licence</strong>
+</h2>
+
+<pre><code>mpi4py-examples Copyright (C) 2016 Jordi Corbilla
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU 
+General Public License as published by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even 
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. 
+If not, see http://www.gnu.org/licenses/.
+</code></pre>
+
+<h2>
+<a id="sponsors" class="anchor" href="#sponsors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sponsors</h2>
+
+<p>No sponsors yet! Will you be the first?</p>
+
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=L5FCF6LX5C9AW" title="Donate once-off to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPayl donate button"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JordiCorbilla">JordiCorbilla</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
